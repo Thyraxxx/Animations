@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bear Walk Zoom Bottom</title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .name-tag {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 100px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .frame {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      border: 8px solid #444;
+      border-radius: 100px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0;
+    }
+
+    .bear {
+      width: 80%;
+      position: absolute;
+      bottom: -7px;
+      transform-origin: bottom center;
+    }
+
+    .bear-inner {
+      width: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .off-left {
+      transform: translateX(-125%) scale(0.6);
+    }
+
+    .off-right {
+      transform: translateX(125%) scale(0.6);
+    }
+
+    .centered {
+      transform: translateX(0%) scale(1);
+    }
+
+    .flipped {
+      transform: scaleX(-1);
+    }
+
+    .walk-in-right {
+      animation: walkInRight 5s ease forwards;
+    }
+
+    .walk-in-left {
+      animation: walkInLeft 5s ease forwards;
+    }
+
+    .walk-out-left {
+      animation: walkOutLeft 5s ease forwards;
+    }
+
+    .walk-out-right {
+      animation: walkOutRight 5s ease forwards;
+    }
+
+    @keyframes walkInRight {
+      0% { transform: translateX(125%) scale(0.6) translateY(0); }
+      5% { transform: translateX(115%) scale(0.63) translateY(-3px); }
+      10% { transform: translateX(105%) scale(0.66) translateY(0); }
+      15% { transform: translateX(95%) scale(0.69) translateY(0); }
+      20% { transform: translateX(85%) scale(0.72) translateY(0); }
+      25% { transform: translateX(75%) scale(0.75) translateY(3px); }
+      30% { transform: translateX(65%) scale(0.78) translateY(0); }
+      35% { transform: translateX(55%) scale(0.81) translateY(0); }
+      40% { transform: translateX(45%) scale(0.84) translateY(0); }
+      45% { transform: translateX(35%) scale(0.87) translateY(-3px); }
+      50% { transform: translateX(30%) scale(0.9) translateY(0); }
+      55% { transform: translateX(25%) scale(0.92) translateY(0); }
+      60% { transform: translateX(20%) scale(0.94) translateY(0); }
+      65% { transform: translateX(15%) scale(0.96) translateY(3px); }
+      70% { transform: translateX(10%) scale(0.98) translateY(0); }
+      75% { transform: translateX(5%) scale(0.99) translateY(0); }
+      80% { transform: translateX(2%) scale(1) translateY(0); }
+      85% { transform: translateX(1%) scale(1) translateY(0); }
+      90% { transform: translateX(0%) scale(1) translateY(0); }
+      95% { transform: translateX(0%) scale(1) translateY(0); }
+      100% { transform: translateX(0%) scale(1) translateY(0); }
+    }
+
+    @keyframes walkInLeft {
+      0% { transform: translateX(-125%) scale(0.6) translateY(0); }
+      5% { transform: translateX(-115%) scale(0.63) translateY(-3px); }
+      10% { transform: translateX(-105%) scale(0.66) translateY(0); }
+      15% { transform: translateX(-95%) scale(0.69) translateY(0); }
+      20% { transform: translateX(-85%) scale(0.72) translateY(0); }
+      25% { transform: translateX(-75%) scale(0.75) translateY(3px); }
+      30% { transform: translateX(-65%) scale(0.78) translateY(0); }
+      35% { transform: translateX(-55%) scale(0.81) translateY(0); }
+      40% { transform: translateX(-45%) scale(0.84) translateY(0); }
+      45% { transform: translateX(-35%) scale(0.87) translateY(-3px); }
+      50% { transform: translateX(-30%) scale(0.9) translateY(0); }
+      55% { transform: translateX(-25%) scale(0.92) translateY(0); }
+      60% { transform: translateX(-20%) scale(0.94) translateY(0); }
+      65% { transform: translateX(-15%) scale(0.96) translateY(3px); }
+      70% { transform: translateX(-10%) scale(0.98) translateY(0); }
+      75% { transform: translateX(-5%) scale(0.99) translateY(0); }
+      80% { transform: translateX(-2%) scale(1) translateY(0); }
+      85% { transform: translateX(-1%) scale(1) translateY(0); }
+      90% { transform: translateX(0%) scale(1) translateY(0); }
+      95% { transform: translateX(0%) scale(1) translateY(0); }
+      100% { transform: translateX(0%) scale(1) translateY(0); }
+    }
+
+    @keyframes walkOutLeft {
+      0% { transform: translateX(0%) scale(1) translateY(0); }
+      5% { transform: translateX(-5%) scale(0.98) translateY(-3px); }
+      10% { transform: translateX(-10%) scale(0.96) translateY(0); }
+      15% { transform: translateX(-20%) scale(0.94) translateY(0); }
+      20% { transform: translateX(-30%) scale(0.92) translateY(0); }
+      25% { transform: translateX(-40%) scale(0.9) translateY(3px); }
+      30% { transform: translateX(-50%) scale(0.88) translateY(0); }
+      35% { transform: translateX(-60%) scale(0.86) translateY(0); }
+      40% { transform: translateX(-70%) scale(0.84) translateY(0); }
+      45% { transform: translateX(-80%) scale(0.82) translateY(-3px); }
+      50% { transform: translateX(-90%) scale(0.8) translateY(0); }
+      55% { transform: translateX(-100%) scale(0.78) translateY(0); }
+      60% { transform: translateX(-105%) scale(0.76) translateY(0); }
+      65% { transform: translateX(-110%) scale(0.74) translateY(3px); }
+      70% { transform: translateX(-115%) scale(0.72) translateY(0); }
+      75% { transform: translateX(-118%) scale(0.7) translateY(0); }
+      80% { transform: translateX(-121%) scale(0.68) translateY(0); }
+      85% { transform: translateX(-123%) scale(0.66) translateY(0); }
+      90% { transform: translateX(-124%) scale(0.64) translateY(0); }
+      95% { transform: translateX(-125%) scale(0.62) translateY(0); }
+      100% { transform: translateX(-125%) scale(0.6) translateY(0); }
+    }
+
+    @keyframes walkOutRight {
+      0% { transform: translateX(0%) scale(1) translateY(0); }
+      5% { transform: translateX(5%) scale(0.98) translateY(-3px); }
+      10% { transform: translateX(10%) scale(0.96) translateY(0); }
+      15% { transform: translateX(20%) scale(0.94) translateY(0); }
+      20% { transform: translateX(30%) scale(0.92) translateY(0); }
+      25% { transform: translateX(40%) scale(0.9) translateY(3px); }
+      30% { transform: translateX(50%) scale(0.88) translateY(0); }
+      35% { transform: translateX(60%) scale(0.86) translateY(0); }
+      40% { transform: translateX(70%) scale(0.84) translateY(0); }
+      45% { transform: translateX(80%) scale(0.82) translateY(-3px); }
+      50% { transform: translateX(90%) scale(0.8) translateY(0); }
+      55% { transform: translateX(100%) scale(0.78) translateY(0); }
+      60% { transform: translateX(105%) scale(0.76) translateY(0); }
+      65% { transform: translateX(110%) scale(0.74) translateY(3px); }
+      70% { transform: translateX(115%) scale(0.72) translateY(0); }
+      75% { transform: translateX(118%) scale(0.7) translateY(0); }
+      80% { transform: translateX(121%) scale(0.68) translateY(0); }
+      85% { transform: translateX(123%) scale(0.66) translateY(0); }
+      90% { transform: translateX(124%) scale(0.64) translateY(0); }
+      95% { transform: translateX(125%) scale(0.62) translateY(0); }
+      100% { transform: translateX(125%) scale(0.6) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="name-tag">DUDU</div>
+  <div class="frame" id="bearWrapper">
+    <div class="bear off-right" id="bear">
+      <img class="bear-inner" id="bearImg" src="b.gif" alt="Bear" />
+    </div>
+  </div>
+
+  <script>
+    const bear = document.getElementById("bear");
+    const bearImg = document.getElementById("bearImg");
+    const gifUrl = "a.gif";
+    const stillUrl = "b.gif";
+    const gifDuration = 3000;
+    const transitionDuration = 5000;
+
+    let isVisible = false;
+    let isPlaying = false;
+    let isTransitioning = false;
+    let comingFromRight = true;
+
+    document.addEventListener("keydown", (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (isTransitioning || isPlaying) return;
+
+        isTransitioning = true;
+
+        bear.classList.remove("off-left", "off-right", "walk-out-left", "walk-out-right", "walk-in-left", "walk-in-right");
+        void bear.offsetWidth;
+
+        if (!isVisible) {
+          bear.classList.add(comingFromRight ? "walk-in-right" : "walk-in-left");
+          bear.classList.add("centered");
+          bearImg.classList.toggle("flipped", !comingFromRight);
+          isVisible = true;
+
+          setTimeout(() => {
+            isTransitioning = false;
+          }, transitionDuration);
+        } else {
+          bear.classList.remove("centered");
+          void bear.offsetWidth;
+
+          bear.classList.add(comingFromRight ? "walk-out-left" : "walk-out-right");
+
+          setTimeout(() => {
+            bear.classList.remove("walk-out-left", "walk-out-right");
+            bear.classList.add(comingFromRight ? "off-left" : "off-right");
+
+            isVisible = false;
+            comingFromRight = !comingFromRight;
+            isTransitioning = false;
+          }, transitionDuration);
+        }
+      }
+
+      if (e.code === 'Enter' && isVisible && !isPlaying && !isTransitioning) {
+        e.preventDefault();
+        isPlaying = true;
+        bearImg.src = gifUrl + "?t=" + Date.now();
+
+        setTimeout(() => {
+          bearImg.src = stillUrl;
+          isPlaying = false;
+        }, gifDuration);
+      }
+    });
+  </script>
+</body>
+</html>
