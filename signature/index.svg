@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W#C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1500" height="1200">
+
+  <style>
+    .signature {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 7s ease-out forwards;
+    }
+
+    .dot {
+      stroke-dasharray: 20;
+      stroke-dashoffset: 20;
+      animation: draw-final 1s ease-out forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes draw-final {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+
+  <path class="signature" fill="none" stroke="black" stroke-width="2"
+    d="M 100 70
+
+       c 100 0 0 -100 10 80
+       c -50 80 0 -100 35 0
+       c 50 -80 10 0 50 -25
+       c 20 0 0 0 25 0"
+       />
+
+  <path class="dot" fill="none" stroke="black" stroke-width="2"
+    d="M 230 124
+
+       m 0 0 0 0 0 2"
+       />
+</svg>
