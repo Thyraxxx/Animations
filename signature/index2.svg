@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W#C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1500" height="1200">
+
+  <style>
+    .s1 {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 7500;
+      stroke-dashoffset: 7500;
+      animation: draw 7s linear forwards;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+  </style>
+
+  <path class="s1"
+    d="M 300 300
+
+       c 100 0, 0 -100, 10 80
+       c 5 50, -100 20, 40 -20
+       c -10 80, 0 50, 50 0
+       c 10 20, 30 0, 70 0
+       c -70 -10, -80 80, -10 30
+       c 30 -50, 0 -50, 0 0
+       c 5 10, 20 20, 40 0
+       c 60 -150, 0 -150, 0 0
+       c 10 10, 10 20, 50 -5
+       c 70 -30, 10 -80, 0 0
+       c 0 30, 30 30, 50 0 
+       c 35 -50, 40 -50, 20 20
+       c 10 -60, 70 -90, 50 0
+       c 10 10, 30 -30, 40 -40
+       c 10 -20, 80 -40, 20 25
+       c 10 -20, 80 -40, 20 40
+       c -120 150, -150 70, 40 -50
+       c 10 -10, 20 -30, 20 -35
+       c -10 100, 60 70, 50 0
+       c -10 90, 20 50, 40 40
+       c 80 -40, 10 -70, 0 0
+       c 10 30, 40 30, 70 -10
+       c 60 -120, 0 -120, -10 10
+       c 0 30, 20 30, 50 0
+       c 10 -10, 30 -40, 70 -40
+       c -80 0, -100 100, -10 50
+       c 40 -80, -10 -70, 0 0
+       c 10 10, 20 20, 50 0
+       c 60 -100, -300 -150, -900 0
+       c 0 0, 0 0, 930 -20
+       c 0 0, 0 0, -940 10
+       c 0 0, 0 0, 1000 -40
+    "/>
+
+</svg>
